@@ -1,0 +1,153 @@
+
+/*
+   This is the css for the chapter thumbnails
+   They are small boxes that show the first
+   few lines of a chapter.
+   There are several bits of css to make sure that they
+   properly.
+*/
+
+
+.night{
+    background:black;
+    color:white;
+}
+
+.chapter-thumbnail {
+  margin-top: 10px;   /* add a margin to look nice */
+  white-space : pre;  /* preserve the original line breaks and spacing
+  						 (I need this because the content of the
+  						 chapter is just text not HTML, so normally
+  						 the line breaks would be ignored) */
+  overflow : hidden;  /* don't show a scroll bar when the text is
+                         too big to fit in the box (which it always
+                         will be but we don't mind as it is just a
+                         thumbnail) */
+  max-height: 150px;  /* make sure that the box doesn't get too big */
+  height : 150px;     /* even if the text is big */
+  border-radius: 10px;/* rounded corners */
+}
+
+#mainViewer {
+  margin-top: 10px;
+  white-space : pre;
+     /* preserve the original line breaks (see above)*/
+}
+#navbarDropdown{
+  text-decoration: none;
+}
+.choose{
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  position: absolute;
+  right:0px;
+  top:20px;
+  color:green;
+
+
+}
+.choose:hover{
+  color:#00b3ff;
+}
+@media (max-width: 568px){
+.choose {
+  position: absolute;
+  top:-150px;
+}
+}
+.writeups{
+  text-align: center;
+
+}
+.writeups h1{
+font-size: 50px;
+font-weight: 400;
+  position: relative;
+animation: text 2s linear infinite;
+background: black;
+
+}
+.writeups p{
+  color: green;
+  font-size: 12px;
+  font-weight: 2;
+}
+@keyframes text {
+  0%, 55%, 100%{
+    color: #FF9800;
+    filter: blur(2px);
+    text-shadow: 0 0 10% #00b3ff,
+                0 0 20% #00b3ff,
+                0 0 40% #00b3ff,
+                0 0 80% #00b3ff,
+                0 0 120% #00b3ff,
+                0 0 200% #00b3ff,
+                0 0 300% #00b3ff,
+                0 0 400% #00b3ff;
+letter-spacing: 5px;
+
+
+  }
+ 5%,75%, 95%{
+   color:#111;
+   filter: blur(0px);
+   text-shadow: 0 0 10% none;
+   letter-spacing: 2px;
+
+ }
+}
+.intro{
+  margin-top: 115px;
+
+}
+
+.img{
+  border-radius: 180px;
+  position: relative;
+}
+.author{
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+  font-family: monospace;
+  font-weight: 10;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-left: 0;
+}
+.content{
+  position: absolute;
+  width: 230px;
+  right: 0;
+  top: 30px;
+  text-align:center;
+}
+.commingsoon{
+  position: relative;
+  text-align: center;
+  font-size: 60px;
+}
+.footer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 130px;
+    width:100%;
+    margin-top:200px;
+}
+.footer p{
+  color: #fff;
+}
+.footer a {
+    color: #fff;
+}
+.footer a:hover{
+    color: green;
+}
+.footer .social >* {
+    margin-right: 30px;
+}
