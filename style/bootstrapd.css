@@ -52,11 +52,11 @@ padding-right: 0;
 margin-right:0;
 }
 .form-inline{
-  padding-top: 20px;
+  padding-top: 300px;
   padding-bottom: 20px;
   padding-right: 0px;
   margin-right:0;
-margin-left:  30px;
+margin-left:  10px;
 
 }
 .form-inline .btn{
@@ -76,6 +76,9 @@ margin-left:  30px;
 }
 }
 
+.intro {
+    margin-top: 160px;
+}
 .nav-item .nav-link:hover{
   color: white;
 }
@@ -91,7 +94,10 @@ list-style-type: none;
   position: relative;
   top: -35px;
 }
-
+.navbar-toggler {
+    padding: 1.75rem 1.75rem;
+    margin: 4em;
+}
 
 body {
   margin: 0;
