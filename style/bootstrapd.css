@@ -31,7 +31,7 @@ margin-left: 6px;
 
 }
 .dropdown-item{
-  font-size: 15px;
+  font-size: 13px;
 
 
 }
@@ -39,14 +39,14 @@ margin-left: 6px;
 
 .nav-item .nav-link{
   color:silver;
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.8;
   list-style-type: none;
   display: flex;
   position: relative;
   left: 0;
 text-align: center;
-margin-left:15px;
+margin-left:10px;
 
 padding-right: 0;
 margin-right:0;
