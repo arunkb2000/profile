@@ -35,8 +35,11 @@ margin-left: 6px;
 
 
 }
-
-
+.navbar-nav {
+  
+    position: relative;
+    left: 5%;
+}
 .nav-item .nav-link{
   color:silver;
   font-size: 15px;
