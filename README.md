@@ -1,7 +1,7 @@
 # arunkb.profile
 This project contain max of information about me. like,
 1) My Introduction
-2) My Achievements(some not all)
+2) My Achievements(not all)
 3) Inside the project heading, it contains all my projects that I hosted.
 4) Live Projects: a) Blog website b) Loginform with all validatons in JS. c) Restaurent website will host soon.
 5) Inside Blog website, there are some other projects that I linked in this website itself. They are,
