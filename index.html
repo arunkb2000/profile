@@ -49,9 +49,9 @@
 
 						<!-- One -->
 							<section id="one">
-								<div class="image main" data-position="center">
+								<!-- <div class="image main" data-position="center">
 									<img src="https://media.licdn.com/dms/image/v2/D4D16AQHcvY4rlzBE1A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700921470825?e=1782950400&v=beta&t=GP5YIAbV_XHL_mkT7Ykx-dncbqduSaXLazfC3w7fkPE" alt="About Me" />
-								</div>
+								</div> -->
 								<div class="container">
 									<header class="major">
 										<h2>About Me</h2>
@@ -93,7 +93,19 @@
 									<div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column;">
 										<h4 style="margin: 0 0 12px 0; color: #222;">Inventory Order Management</h4>
 										<p style="font-size: 13px; color: #666; margin-bottom: 16px; flex-grow: 1;">Full-stack web app for products, customers, orders, and stock tracking. FastAPI + React + PostgreSQL + Docker.</p>
-										<p style="margin: 0;"><a href="https://github.com/arunkb2000/inventory-order-management-system" target="_blank" class="button primary small" style="width: 48%; display: inline-block;">Repository</a> · <a href="https://inventory-order-management-system-khaki.vercel.app/" target="_blank" class="button primary small" style="width: 48%; display: inline-block;">Live App</a></p>
+										<p class="project-links">
+											<a href="https://github.com/arunkb2000/inventory-order-management-system"
+												target="_blank"
+												class="button primary small">
+												Repository
+											</a>
+
+											<a href="https://inventory-order-management-system-khaki.vercel.app/"
+												target="_blank"
+												class="button primary small">
+												Live App
+											</a>
+										</p>
 									</div>
 								</div>
 							</div>
@@ -337,7 +349,7 @@
 			<script type="text/javascript">
 						// Google Apps Script Web App URL - Replace with your deployed web app endpoint.
 						// The Google Sheets URL is not the endpoint; it should be the Apps Script deploy URL.
-						const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/d/1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA/userweb/exec';
+						const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2Ies9MQlC1qaQrF6c2ZPab6LmqL2pBgAqPG_T1uQ-MreFoSEDeU9bIklWvL_0Sbq8Q/exec';
 				document.getElementById('contactForm').addEventListener('submit', function(e) {
 					e.preventDefault();
 					
@@ -359,19 +371,16 @@
 					submitBtn.textContent = 'Sending...';
 					messageDiv.style.display = 'block';
 					messageDiv.textContent = 'Sending your message...';
-					messageDiv.style.color = '#666';
+					messageDiv.style.color = '#334155';
 					
-const PLACEHOLDER_URL = 'https://script.google.com/macros/d/1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA/userweb/exec';
-								const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.trim() === PLACEHOLDER_URL || GOOGLE_SCRIPT_URL.trim().length === 0;
-								if (isPlaceholderEndpoint) {
-									messageDiv.innerHTML = '❌ Contact form is not configured yet. Replace the Apps Script URL with a deployed web app URL, or <a href="mailto:arun.dakshana17@gmail.com">email me directly</a>.';
-									messageDiv.style.color = '#dc3545';
-									submitBtn.disabled = false;
-								submitBtn.textContent = 'Send Message';
-								return;
-							}
-							
-							// Send data to Google Apps Script
+					const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.trim().length === 0;
+					if (isPlaceholderEndpoint) {
+						messageDiv.innerHTML = '❌ Contact form is not configured yet. Replace the Apps Script URL with a deployed web app URL, or <a href="mailto:arun.dakshana17@gmail.com">email me directly</a>.';
+						messageDiv.style.color = '#dc3545';
+						submitBtn.disabled = false;
+						submitBtn.textContent = 'Send Message';
+						return;
+					}
 							fetch(GOOGLE_SCRIPT_URL, {
 								method: 'POST',
 								body: JSON.stringify(formData),
