@@ -3182,7 +3182,38 @@ input, select, textarea {
     min-width: 120px;
     text-align: center;
 }
+/* Project cards responsive */
+@media screen and (max-width: 736px) {
 
+    .row.gtr-uniform > .col-6 {
+        width: 100% !important;
+        padding-left: 0 !important;
+        margin-bottom: 20px;
+    }
+
+    .project-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-links a {
+        width: 100% !important;
+        display: block !important;
+        text-align: center;
+    }
+}
+
+/* Desktop */
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-links a {
+    flex: 1;
+    text-align: center;
+}
 @media (max-width: 768px) {
     .project-links {
         flex-direction: column;
