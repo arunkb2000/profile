@@ -24,9 +24,10 @@
 					<ul>
 						<li><a href="#one" class="active">About</a></li>
 						<li><a href="#two">Projects</a></li>
-						<li><a href="#three">Things I Can Do</a></li>
-						<li><a href="#four">A Few Accomplishments</a></li>
-						<li><a href="#five">Contact</a></li>
+						<li><a href="#three">Core Competencies</a></li>
+						<li><a href="#four">Education</a></li>
+						<li><a href="#accomplishments">Accomplishments</a></li>
+						<li><a href="#five">Get In Touch</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -207,6 +208,36 @@
 				<div class="container actions special">
 					<h3>Get In Touch</h3>
 					<p>Let's connect to discuss backend systems, AI architecture, or collaboration opportunities.</p>
+
+					<!-- Contact Form -->
+					<form id="contactForm" style="max-width: 600px; margin: 30px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
+						<div style="margin-bottom: 16px;">
+							<label for="name" style="display: block; margin-bottom: 6px; font-weight: 600;">Name</label>
+							<input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+						</div>
+
+						<div style="margin-bottom: 16px;">
+							<label for="email" style="display: block; margin-bottom: 6px; font-weight: 600;">Email</label>
+							<input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+						</div>
+
+						<div style="margin-bottom: 16px;">
+							<label for="phone" style="display: block; margin-bottom: 6px; font-weight: 600;">Phone (Optional)</label>
+							<input type="tel" id="phone" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
+						</div>
+
+						<div style="margin-bottom: 16px;">
+							<label for="message" style="display: block; margin-bottom: 6px; font-weight: 600;">Message</label>
+							<textarea id="message" name="message" required rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: Arial, sans-serif;"></textarea>
+						</div>
+
+						<button type="submit" class="button primary" style="width: 100%; padding: 12px; font-size: 16px; cursor: pointer;">Send Message</button>
+						<div id="formMessage" style="margin-top: 12px; text-align: center; font-weight: 600; display: none; padding: 10px; border-radius: 4px;"></div>
+					</form>
+
+					<!-- Contact Info -->
+					<hr style="margin: 30px 0;">
+					<p style="text-align: center; margin-bottom: 20px;"><strong>Or reach out directly:</strong></p>
 					<ul class="feature-icons">
 						<li class="icon solid fa-envelope"><a href="mailto:arun.dakshana17@gmail.com">arun.dakshana17@gmail.com</a></li>
 						<li class="icon solid fa-phone">+91-7049245976</li>
@@ -234,12 +265,72 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			
+			<!-- Contact Form Handler -->
+			<script type="text/javascript">
+				// Google Apps Script Web App URL - Replace with your actual endpoint
+				const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/d/YOUR_SCRIPT_ID/userweb/exec';
+				
+				document.getElementById('contactForm').addEventListener('submit', function(e) {
+					e.preventDefault();
+					
+					const form = this;
+					const submitBtn = form.querySelector('button[type="submit"]');
+					const messageDiv = document.getElementById('formMessage');
+					
+					// Get form data
+					const formData = {
+						name: document.getElementById('name').value,
+						email: document.getElementById('email').value,
+						phone: document.getElementById('phone').value,
+						message: document.getElementById('message').value,
+						timestamp: new Date().toLocaleString()
+					};
+					
+					// Disable submit button
+					submitBtn.disabled = true;
+					submitBtn.textContent = 'Sending...';
+					messageDiv.style.display = 'block';
+					messageDiv.textContent = 'Sending your message...';
+					messageDiv.style.color = '#666';
+					
+					// Send data to Google Apps Script
+					fetch(GOOGLE_SCRIPT_URL, {
+						method: 'POST',
+						body: JSON.stringify(formData),
+						headers: {
+							'Content-Type': 'application/json'
+						}
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (data.status === 'success') {
+							messageDiv.textContent = '✅ Thank you! Your message has been sent. I\'ll get back to you soon.';
+							messageDiv.style.color = '#28a745';
+							form.reset();
+							submitBtn.textContent = 'Message Sent!';
+							setTimeout(() => {
+								submitBtn.disabled = false;
+								submitBtn.textContent = 'Send Message';
+								messageDiv.style.display = 'none';
+							}, 3000);
+						} else {
+							throw new Error(data.message || 'Failed to send message');
+						}
+					})
+					.catch(error => {
+						messageDiv.textContent = '❌ Error: ' + error.message + '. Please try emailing directly.';
+						messageDiv.style.color = '#dc3545';
+						submitBtn.disabled = false;
+						submitBtn.textContent = 'Send Message';
+					});
+				});
+			</script>
+
 			<script type="text/javascript">
 				function show(clicked){
-
 					var text = "Thank you for your interest in my projects !!\nProject Work already completed, we will publish it live soon.";
 					alert(text);
-
 				}
 			</script>
 
