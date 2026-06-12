@@ -347,10 +347,8 @@
 			
 			<!-- Contact Form Handler -->
 			<script type="text/javascript">
-						// Google Apps Script Web App URL - Replace with your deployed web app endpoint.
-						// The Google Sheets URL is not the endpoint; it should be the Apps Script deploy URL.
-						const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2Ies9MQlC1qaQrF6c2ZPab6LmqL2pBgAqPG_T1uQ-MreFoSEDeU9bIklWvL_0Sbq8Q/exec';
-				document.getElementById('contactForm').addEventListener('submit', function(e) {
+					const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxC2Ies9MQlC1qaQrF6c2ZPab6LmqL2pBgAqPG_T1uQ-MreFoSEDeU9bIklWvL_0Sbq8Q/exec';
+				    document.getElementById('contactForm').addEventListener('submit', function(e) {
 					e.preventDefault();
 					
 					const form = this;
@@ -396,7 +394,7 @@
 								return response.json();
 							})
 							.then(data => {
-								if (data.status === 'success') {
+								if (data.status) {
 									messageDiv.textContent = '✅ Thank you! Your message has been sent. I\'ll get back to you soon.';
 									messageDiv.style.color = '#28a745';
 									form.reset();
