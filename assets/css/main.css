@@ -2376,19 +2376,18 @@ input, select, textarea {
 /* Feature Icons */
 
 	ul.feature-icons {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 10px;
+		list-style: none;
+		padding-left: 0;
 	}
 
 		ul.feature-icons li {
-			width: calc(50% - 10px);
-			box-sizing: border-box;
-			overflow-wrap: break-word;
-			word-break: break-word;
-		}
-		ul.feature-icons li a {
-			word-break: break-all;
+			text-decoration: none;
+			display: inline-block;
+			margin: 0 0 1.6875em 0;
+			padding: 0.35em 0 0 3.5em;
+			position: relative;
+			vertical-align: top;
+			width: 48%;
 		}
 
 			ul.feature-icons li:before {
@@ -3185,9 +3184,6 @@ input, select, textarea {
 }
 /* Project cards responsive */
 @media screen and (max-width: 736px) {
-	ul.feature-icons li {
-        width: 100%;
-    }
 
     .row.gtr-uniform > .col-6 {
         width: 100% !important;
