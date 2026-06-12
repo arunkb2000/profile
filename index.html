@@ -336,9 +336,8 @@
 			
 			<!-- Contact Form Handler -->
 			<script type="text/javascript">
-				// Google Apps Script Web App URL - Replace with your actual endpoint
-				const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/d/1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA/userweb/exec';
-				
+						// Google Apps Script Web App URL - Replace with your deployed web app endpoint.
+						// The Google Sheets URL is not the endpoint; it should be the Apps Script deploy URL.
 				document.getElementById('contactForm').addEventListener('submit', function(e) {
 					e.preventDefault();
 					
@@ -362,7 +361,7 @@
 					messageDiv.textContent = 'Sending your message...';
 					messageDiv.style.color = '#666';
 					
-							const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.includes('YOUR_SCRIPT_ID') || GOOGLE_SCRIPT_URL.trim().length === 0;
+							const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.includes('1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA') || GOOGLE_SCRIPT_URL.trim().length === 0;
 							if (isPlaceholderEndpoint) {
 								messageDiv.innerHTML = '❌ Contact form is not configured yet. Please <a href="mailto:arun.dakshana17@gmail.com">email me directly</a>.';
 								messageDiv.style.color = '#dc3545';
