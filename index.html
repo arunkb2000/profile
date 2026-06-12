@@ -15,7 +15,7 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="https://media-exp1.licdn.com/dms/image/C5603AQHvJ_WltNhULA/profile-displayphoto-shrink_200_200/0/1590584807593?e=1634774400&v=beta&t=tqvcjWNbvL7VT4sP6-sF2_wPbht7q9cpnOjkmUP3lGU" alt="" /></span>
+					<!-- <span class="image avatar"><img src="https://media-exp1.licdn.com/dms/image/C5603AQHvJ_WltNhULA/profile-displayphoto-shrink_200_200/0/1590584807593?e=1634774400&v=beta&t=tqvcjWNbvL7VT4sP6-sF2_wPbht7q9cpnOjkmUP3lGU" alt="" /></span> -->
 					<h1 id="logo"><a href="#">Arun Kumar Bisariya</a></h1>
 						<p>Senior Software Engineer<br />
 						Backend systems, AWS serverless, and AI-native architecture.</p>
@@ -50,7 +50,7 @@
 						<!-- One -->
 							<section id="one">
 								<div class="image main" data-position="center">
-									<!-- <img src="https://media.licdn.com/dms/image/v2/D4D16AQHcvY4rlzBE1A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700921470825?e=1782950400&v=beta&t=GP5YIAbV_XHL_mkT7Ykx-dncbqduSaXLazfC3w7fkPE" alt="About Me" /> -->
+									<img src="https://media.licdn.com/dms/image/v2/D4D16AQHcvY4rlzBE1A/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1700921470825?e=1782950400&v=beta&t=GP5YIAbV_XHL_mkT7Ykx-dncbqduSaXLazfC3w7fkPE" alt="About Me" />
 								</div>
 								<div class="container">
 									<header class="major">
@@ -278,30 +278,29 @@
 					<p>Let's connect to discuss backend systems, AI architecture, or collaboration opportunities.</p>
 
 					<!-- Contact Form -->
-					<form id="contactForm" style="max-width: 600px; margin: 30px auto; padding: 20px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9;">
-						<div style="margin-bottom: 16px;">
-							<label for="name" style="display: block; margin-bottom: 6px; font-weight: 600;">Name</label>
-							<input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-						</div>
+						<form id="contactForm" class="contact-card">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" required>
+							</div>
 
-						<div style="margin-bottom: 16px;">
-							<label for="email" style="display: block; margin-bottom: 6px; font-weight: 600;">Email</label>
-							<input type="email" id="email" name="email" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-						</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="email" id="email" name="email" required>
+							</div>
 
-						<div style="margin-bottom: 16px;">
-							<label for="phone" style="display: block; margin-bottom: 6px; font-weight: 600;">Phone (Optional)</label>
-							<input type="tel" id="phone" name="phone" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">
-						</div>
+							<div class="field">
+								<label for="phone">Phone (Optional)</label>
+								<input type="tel" id="phone" name="phone">
+							</div>
 
-						<div style="margin-bottom: 16px;">
-							<label for="message" style="display: block; margin-bottom: 6px; font-weight: 600;">Message</label>
-							<textarea id="message" name="message" required rows="5" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-family: Arial, sans-serif;"></textarea>
-						</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea id="message" name="message" required rows="5"></textarea>
+							</div>
 
-									<button type="submit" class="button primary" style="display: block; margin: 0 auto; font-size: 16px; cursor: pointer; width: auto; text-align: center;">Send Message</button>
-									<div id="formMessage" style="margin-top: 12px; text-align: center; font-weight: 600; display: none; padding: 10px; border-radius: 4px;"></div>
-					</form>
+								<button type="submit" class="button primary">Send Message</button>
+								<div id="formMessage" class="form-message"></div>
 
 					<!-- Contact Info -->
 					<hr style="margin: 30px 0;">
@@ -362,11 +361,12 @@
 					messageDiv.textContent = 'Sending your message...';
 					messageDiv.style.color = '#666';
 					
-							const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.includes('1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA') || GOOGLE_SCRIPT_URL.trim().length === 0;
-							if (isPlaceholderEndpoint) {
-								messageDiv.innerHTML = '❌ Contact form is not configured yet. Please <a href="mailto:arun.dakshana17@gmail.com">email me directly</a>.';
-								messageDiv.style.color = '#dc3545';
-								submitBtn.disabled = false;
+const PLACEHOLDER_URL = 'https://script.google.com/macros/d/1gwAi_E0CSQ3Ezr6ke6d6dh3qd5uWe9j_1at8-vD8QxA/userweb/exec';
+								const isPlaceholderEndpoint = GOOGLE_SCRIPT_URL.trim() === PLACEHOLDER_URL || GOOGLE_SCRIPT_URL.trim().length === 0;
+								if (isPlaceholderEndpoint) {
+									messageDiv.innerHTML = '❌ Contact form is not configured yet. Replace the Apps Script URL with a deployed web app URL, or <a href="mailto:arun.dakshana17@gmail.com">email me directly</a>.';
+									messageDiv.style.color = '#dc3545';
+									submitBtn.disabled = false;
 								submitBtn.textContent = 'Send Message';
 								return;
 							}
