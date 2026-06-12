@@ -2819,7 +2819,7 @@ input, select, textarea {
 	}
 
 	#header > header p {
-		color: #c5f7e9;
+		color: #f3f9f7;
 		font-style: italic;
 		margin: 1em 0 0 0;
 	}
@@ -2840,7 +2840,7 @@ input, select, textarea {
 	}
 
 	#header > footer .icons li a {
-		color: #99e8ff;
+		color: #edf3f4;
 	}
 
 	#header > nav {
