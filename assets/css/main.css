@@ -2745,10 +2745,10 @@ input, select, textarea {
 				display: block;
 				margin: 0 auto 2.25em auto;
 				width: 8em;
-			}
-
-			#header > header h1 {
-				font-size: 1.75em;
+							height: 8em;
+							border: 4px solid rgba(255, 255, 255, 0.35);
+							box-shadow: 0 0 0 8px rgba(210, 242, 233, 0.16);
+							background: rgba(255, 255, 255, 0.08);
 				margin: 0;
 			}
 
