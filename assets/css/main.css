@@ -3179,7 +3179,7 @@ input, select, textarea {
 
 .project-links a {
     flex: 1;
-    min-width: 140px;
+    min-width: 120px;
     text-align: center;
 }
 
@@ -3397,7 +3397,7 @@ input, select, textarea {
 			input[type="reset"],
 			input[type="button"],
 			.button {
-				padding: 0;
+				padding: 2;
 			}
 
 	}
